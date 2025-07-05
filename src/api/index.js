@@ -4,7 +4,7 @@ import * as endpoints from './endpoints'
 // Create axios instance with no auth required
 const baseURL = window.location.hostname === 'localhost' 
   ? 'http://localhost:5001/api/external/v1' 
-  : 'https://api.rbxchance.com/api/external/v1';
+  : 'https://backendyay.onrender.com/api/external/v1';
 
 const instance = axios.create({
   baseURL,

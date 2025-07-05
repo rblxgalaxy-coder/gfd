@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const baseURL =
-  window.location.hostname === 'localhost' ? 'http://localhost:5001/api' : 'https://api.rbxchance.com/api'
+  window.location.hostname === 'localhost' ? 'http://localhost:5001/api' : 'https://backendyay.onrender.com/api'
 
 export default {
   name: 'Login',
