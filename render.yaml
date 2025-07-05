@@ -7,9 +7,7 @@ services:
     name: mm2bet-admin
     env: node
     nodeVersion: 16.17.0  # Use Node.js 16 LTS for better compatibility with Vue CLI
-    buildCommand: |
-      npm ci
-      npx vue-cli-service build
+    buildCommand: ./build.sh
     staticPublish: dist
     envVars:
       - key: NODE_ENV
