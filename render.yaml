@@ -1,0 +1,27 @@
+# Render Blueprint for mm2bet-admin
+# Reference: https://render.com/docs/blueprint-spec
+
+# Node.js service for the frontend
+services:
+  - type: web
+    name: mm2bet-admin
+    env: node
+    buildCommand: npm install && npm run build
+    staticPublish: dist
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VUE_APP_API_URL
+        value: https://your-backend-api-url.com  # Replace with your actual backend URL
+
+# Add database if needed
+# databases:
+#   - name: my-db
+#     databaseName: mydb
+#     user: myuser
+
+# Add cron jobs if needed
+# cronJobs:
+#   - name: my-cron-job
+#     schedule: "0 0 * * *"  # Runs daily at midnight
+#     command: npm run my-script
