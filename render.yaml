@@ -6,13 +6,20 @@ services:
   - type: web
     name: mm2bet-admin
     env: node
-    buildCommand: npm install && npm run build
+    nodeVersion: 16.17.0  # Use Node.js 16 LTS for better compatibility with Vue CLI
+    buildCommand: |
+      npm install
+      npm run build
     staticPublish: dist
     envVars:
       - key: NODE_ENV
         value: production
       - key: VUE_APP_API_URL
         value: https://your-backend-api-url.com  # Replace with your actual backend URL
+      - key: NPM_CONFIG_PRODUCTION
+        value: 'false'  # Ensure devDependencies are installed
+    build:
+      cacheVersion: '1'  # Enable build caching for faster deployments
 
 # Add database if needed
 # databases:
