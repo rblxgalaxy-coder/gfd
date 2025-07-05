@@ -8,8 +8,8 @@ services:
     env: node
     nodeVersion: 16.17.0  # Use Node.js 16 LTS for better compatibility with Vue CLI
     buildCommand: |
-      npm install
-      npm run build
+      npm ci
+      npx vue-cli-service build
     staticPublish: dist
     envVars:
       - key: NODE_ENV
